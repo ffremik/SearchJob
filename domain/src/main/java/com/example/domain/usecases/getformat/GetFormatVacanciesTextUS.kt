@@ -7,8 +7,9 @@ class GetFormatVacanciesTextUS @Inject constructor(
 ) {
     fun invoke(number: Int): String {
         return when (number) {
-            in 2..4 -> "$number человека"
-            else -> "$number человек"
+            1 -> return "$number вакансия"
+            in 2..4 -> return "$number вакансии"
+            else -> return "$number вакансий"
         }
     }
 }

@@ -9,18 +9,17 @@ import javax.inject.Inject
 @HiltViewModel
 class FavoritesVM @Inject constructor(
     private val favoritesUseCases: FavoritesUseCases,
-    //private val getFormatUseCases: GetFormatUseCases
+    private val getFormatUseCases: GetFormatUseCases
 ) : ViewModel(){
 
     val listFavorites = favoritesUseCases.getAllFavorites.invoke()
 
     fun getLookingText(number: Int): String {
-     //   return getFormatUseCases.getFormatLookingTextUS.invoke(number)
-        return ""
+        return getFormatUseCases.getFormatLookingTextUS.invoke(number)
+
     }
 
     fun getVacanciesText(number: Int): String {
-       // return getFormatUseCases.getFormatVacanciesTextUS.invoke(number)
-        return ""
+        return getFormatUseCases.getFormatVacanciesTextUS.invoke(number)
     }
 }
